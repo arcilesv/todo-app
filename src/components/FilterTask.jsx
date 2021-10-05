@@ -1,18 +1,15 @@
-import React, { useContext } from 'react';
-import { useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 
 //Components
 import TodoList from './TodoList';
 
 //Context
-import TasksContext from '../context/TasksContext'
-import { useEffect } from 'react/cjs/react.development';
+import TasksContext from '../context/TasksContext';
 
 const FilterTask = () => {
     const { state } = useContext(TasksContext);
     const [filteredArray, setFilteredArray] = useState(state);
-    const [selectedRadio, setSelectedRadio] = useState('all')
-    
+    const [selectedRadio, setSelectedRadio] = useState('all');
 
     useEffect(() => {
         const handleFilterStatus = () => {
