@@ -35,7 +35,7 @@ const FilterTask = () => {
         };
         handleFilterStatus();
         localStorage.setItem("todoList", JSON.stringify(state));
-    },[state,selectedRadio])
+    },[state,selectedRadio]);
 
     return(
         <>

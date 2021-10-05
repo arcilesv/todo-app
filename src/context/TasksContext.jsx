@@ -2,23 +2,9 @@ import React, { createContext, useReducer } from "react";
 
 const TasksContext = createContext();
 
-// const  initialState = [
-//         {
-//         title: "Task 1",
-//         status: "uncompleted"
-//         },
-//         {
-//         title: "Task 2",
-//         status: "completed"
-//         },
-//         {
-//         title: "Task 3",
-//         status: "deleted"
-//         }
-//     ];
-const initialState = localStorage.getItem("todoList") 
+const initialState = JSON.parse(localStorage.getItem("todoList")) 
                     ? JSON.parse(localStorage.getItem("todoList")) 
-                    : JSON.parse(localStorage.setItem("todoList", JSON.stringify([])));
+                    : [];
 
 const reducer = (state, action) => {
     switch (action.type) {
